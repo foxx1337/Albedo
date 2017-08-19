@@ -2,6 +2,7 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:local="clr-namespace:Albedo"
+        xmlns:properties="clr-namespace:Albedo.Properties"
         Title="Advanced Settings" Height="500" Width="800" WindowStartupLocation="CenterScreen" Icon="Resources/albedo_icon.ico" ResizeMode="CanMinimize">
     <Grid Margin="4,0,4,0">
         <TabControl HorizontalAlignment="Left" Height="471" VerticalAlignment="Top" Width="786">
@@ -125,35 +126,37 @@
             <TabItem Header="app settings ">
                 <Grid>
                     <ScrollViewer HorizontalAlignment="Left" Height="387" VerticalAlignment="Top" Width="770">
-                        <Grid>
-                            <TextBlock HorizontalAlignment="Left" Margin="10,-4,0,0" TextWrapping="Wrap" Text="General" VerticalAlignment="Top" FontSize="24" FontFamily="Segoe UI Light" Width="401" />
-                            <TextBlock HorizontalAlignment="Left" Margin="10,28,0,0" TextWrapping="Wrap" Text="Startup scene/effect" Foreground="#F666" VerticalAlignment="Top" FontSize="16" FontFamily="Segoe UI Semibold" Width="401" />
-                            <ComboBox Name="DefaultCombo" HorizontalAlignment="Left" Margin="10,49,0,0" VerticalAlignment="Top" Width="736" SelectionChanged="DefaultCombo_SelectionChanged" SelectedIndex="0" />
+                        <StackPanel>
+                            <TextBlock HorizontalAlignment="Left" Margin="10,0,0,0" TextWrapping="Wrap" Text="General" VerticalAlignment="Top" FontSize="24" FontFamily="Segoe UI Light" Width="401" />
+                            <TextBlock HorizontalAlignment="Left" Margin="10,0,0,0" TextWrapping="Wrap" Text="Startup scene/effect" Foreground="#F666" VerticalAlignment="Top" FontSize="16" FontFamily="Segoe UI Semibold" Width="401" />
+                            <ComboBox Name="DefaultCombo" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Width="736" SelectionChanged="DefaultCombo_SelectionChanged" SelectedIndex="0" />
+                            <CheckBox Margin="10,10,0,0" Content="Closing settings also closes main window." ToolTip="Uncheck this if you want the window to linger after returning from settings."
+                                      IsChecked="{Binding Source={x:Static properties:Settings.Default}, Path=closeOnReturnFromSettings}"/>
 
-                            <TextBlock HorizontalAlignment="Left" Margin="10,92,0,0" TextWrapping="Wrap" Text="Ambient mode" VerticalAlignment="Top" FontSize="24" FontFamily="Segoe UI Light" Width="401" />
-                            <TextBlock HorizontalAlignment="Left" Margin="10,124,0,0" TextWrapping="Wrap" Text="Transition time" Foreground="#F666" VerticalAlignment="Top" FontSize="16" FontFamily="Segoe UI Semibold" Width="401" />
-                            <ComboBox Name="AppCombo1" HorizontalAlignment="Left" Margin="10,145,0,0" VerticalAlignment="Top" Width="736" SelectionChanged="AppCombo1_SelectionChanged">
+                            <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Ambient mode" VerticalAlignment="Top" FontSize="24" FontFamily="Segoe UI Light" Width="401" />
+                            <TextBlock HorizontalAlignment="Left" Margin="10,0,0,0" TextWrapping="Wrap" Text="Transition time" Foreground="#F666" VerticalAlignment="Top" FontSize="16" FontFamily="Segoe UI Semibold" Width="401" />
+                            <ComboBox Name="AppCombo1" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Width="736" SelectionChanged="AppCombo1_SelectionChanged">
                                 <ComboBoxItem>Slow (8 seconds)</ComboBoxItem>
                                 <ComboBoxItem>Medium (4 seconds, default)</ComboBoxItem>
                                 <ComboBoxItem>Fast (1 second)</ComboBoxItem>
                             </ComboBox>
-                            <TextBlock HorizontalAlignment="Left" Margin="10,174,0,0" TextWrapping="Wrap" Text="Special color mode" Foreground="#F666" VerticalAlignment="Top" FontSize="16" FontFamily="Segoe UI Semibold" Width="401" />
-                            <ComboBox Name="ColorCombo" HorizontalAlignment="Left" Margin="10,195,0,0" VerticalAlignment="Top" Width="736" SelectionChanged="ColorCombo_SelectionChanged" >
+                            <TextBlock HorizontalAlignment="Left" Margin="10,0,0,0" TextWrapping="Wrap" Text="Special color mode" Foreground="#F666" VerticalAlignment="Top" FontSize="16" FontFamily="Segoe UI Semibold" Width="401" />
+                            <ComboBox Name="ColorCombo" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Width="736" SelectionChanged="ColorCombo_SelectionChanged" >
                                 <ComboBoxItem>Default</ComboBoxItem>
                                 <ComboBoxItem>Strong saturation</ComboBoxItem>
                                 <ComboBoxItem>Constant brightness</ComboBoxItem>
                                 <ComboBoxItem>Strong saturation + Constant brightness</ComboBoxItem>
                             </ComboBox>
 
-                            <TextBlock HorizontalAlignment="Left" Margin="10,238,0,0" TextWrapping="Wrap" Text="Daylight mode" VerticalAlignment="Top" FontSize="24" FontFamily="Segoe UI Light" Width="401" />
+                            <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Daylight mode" VerticalAlignment="Top" FontSize="24" FontFamily="Segoe UI Light" Width="401" />
 
-                            <TextBlock HorizontalAlignment="Left" Margin="10,270,0,0" TextWrapping="Wrap" Text="Sunrise setting" Foreground="#F666" VerticalAlignment="Top" FontSize="16" FontFamily="Segoe UI Semibold" Width="401" />
-                            <ComboBox Name="AppCombo2" HorizontalAlignment="Left" Margin="10,291,0,0" VerticalAlignment="Top" Width="736" SelectionChanged="AppCombo2_SelectionChanged" />
+                            <TextBlock HorizontalAlignment="Left" Margin="10,0,0,0" TextWrapping="Wrap" Text="Sunrise setting" Foreground="#F666" VerticalAlignment="Top" FontSize="16" FontFamily="Segoe UI Semibold" Width="401" />
+                            <ComboBox Name="AppCombo2" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Width="736" SelectionChanged="AppCombo2_SelectionChanged" />
 
-                            <TextBlock HorizontalAlignment="Left" Margin="10,338,0,0" TextWrapping="Wrap" Text="Reset options" VerticalAlignment="Top" FontSize="24" FontFamily="Segoe UI Light" Width="401" />
-                            <Button Content="Reset bridge settings" HorizontalAlignment="Left" Margin="10,375,0,0" VerticalAlignment="Top" Width="150" Height="32" Click="ResetButton_Click" />
-                            <Label Content="Use this if you've made changes to your network and Albedo is no longer working." HorizontalAlignment="Left" Margin="5,407,0,0" VerticalAlignment="Top" Width="458"/>
-                        </Grid>
+                            <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Reset options" VerticalAlignment="Top" FontSize="24" FontFamily="Segoe UI Light" Width="401" />
+                            <Button Content="Reset bridge settings" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Width="150" Height="32" Click="ResetButton_Click" />
+                            <Label Content="Use this if you've made changes to your network and Albedo is no longer working." HorizontalAlignment="Left" Margin="5,0,0,0" VerticalAlignment="Top" Width="458"/>
+                        </StackPanel>
                     </ScrollViewer>
                 </Grid>
             </TabItem>

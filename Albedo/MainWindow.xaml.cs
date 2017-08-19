@@ -74,19 +74,6 @@ namespace Albedo
             }
         }
 
-        private void ClearLigts()
-        {
-            for (int i = 1; i <= 5; i++)
-            {
-                string labelName = String.Format("SliderName{0}", i);
-                string sliderName = String.Format("Slider{0}", i);
-                System.Windows.Controls.Label nameRef = (System.Windows.Controls.Label)this.FindName(labelName);
-                Slider sliderRef = (Slider)this.FindName(sliderName);
-                nameRef.Content = "";
-                sliderRef.Value = 0.0d;
-            }
-        }
-
         public void SetInfo()
         {
             slidersAllowed = false;
@@ -98,6 +85,8 @@ namespace Albedo
             }
 
             //Populate Lights tab
+            MegaSlider.IsEnabled = false;
+            MegaSlider.Opacity = 0.35d;
             foreach (string lightLabel in Storage.groupData.lights) {
                 if (i <= 5) {
                     string labelName = String.Format("SliderName{0}", i);
@@ -116,8 +105,25 @@ namespace Albedo
                         MegaSlider.IsEnabled = true;
                         MegaSlider.Opacity = 0.85;
                     }
+                    else
+                    {
+                        sliderRef.IsEnabled = false;
+                        sliderRef.Opacity = 0.35;
+                    }
                     i++;
                 }
+            }
+            // Disable inactive lights from the Lights tab
+            for (; i <= 5; i++)
+            {
+                string labelName = String.Format("SliderName{0}", i);
+                string sliderName = String.Format("Slider{0}", i);
+                System.Windows.Controls.Label nameRef = (System.Windows.Controls.Label)this.FindName(labelName);
+                Slider sliderRef = (Slider)this.FindName(sliderName);
+                nameRef.Content = "";
+                sliderRef.Opacity = 0.35d;
+                sliderRef.IsEnabled = false;
+                sliderRef.Value = 0.0d;
             }
             UpdateMega();
 
@@ -468,9 +474,8 @@ namespace Albedo
                 ComboItem temp = (ComboItem)GroupCombo.SelectedItem;
                 Properties.Settings.Default.bridgeGroup = temp.idStore;
                 Storage.InitializeData();
-                SetInfo();
-                //CloseAfterSettings = true;
-                ClearLigts();
+                var result = Storage.RefreshData();
+                CloseAfterSettings = true;
             }
         }
 
@@ -480,7 +485,7 @@ namespace Albedo
                 this.SettingsButton.Content = "Settings";
                 isAbout = false;
             }
-            if (CloseAfterSettings) {
+            if (CloseAfterSettings && Properties.Settings.Default.closeOnReturnFromSettings) {
                 if (CanDeactivate == true) {
                     WindowStorage.newWindow = null;
                     this.Activate();
