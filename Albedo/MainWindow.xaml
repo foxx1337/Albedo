@@ -32,19 +32,19 @@
                     <Slider local:LightProperty.LightSource="" x:Name="Slider4" FocusVisualStyle="{x:Null}" HorizontalAlignment="Left" Margin="10,96,10,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="290" Grid.Column="1" Style="{DynamicResource FlatSlider}" Height="14" Maximum="254" Minimum="1" Value="1" LargeChange="64" SmallChange="32" ValueChanged="Slider_ValueChanged" IsSnapToTickEnabled="True" TickFrequency="1" IsEnabled="False" Opacity="0.35"/>
                     <Slider local:LightProperty.LightSource="" x:Name="Slider5" FocusVisualStyle="{x:Null}" HorizontalAlignment="Left" Margin="10,128,10,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="290" Grid.Column="1" Style="{DynamicResource FlatSlider}" Height="14" Maximum="254" Minimum="1" Value="1" LargeChange="64" SmallChange="32" ValueChanged="Slider_ValueChanged" IsSnapToTickEnabled="True" TickFrequency="1" IsEnabled="False" Opacity="0.35"/>
 
-                    <Viewbox Margin="10,-12,0,0" VerticalAlignment="Top" Width="109" Height="35" HorizontalAlignment="Left" >
+                    <Viewbox Margin="10,-8,0,0" VerticalAlignment="Top" Width="109" Height="35" HorizontalAlignment="Left" >
                         <Label local:LightProperty.LightSource="" x:Name="SliderName1" Content="" Foreground="#F666" FontFamily="Segoe UI Semibold"/>
                     </Viewbox>
-                    <Viewbox Margin="10,20,0,0" VerticalAlignment="Top" Width="109" Height="35" HorizontalAlignment="Left" >
+                    <Viewbox Margin="10,24,0,0" VerticalAlignment="Top" Width="109" Height="35" HorizontalAlignment="Left" >
                         <Label local:LightProperty.LightSource="" x:Name="SliderName2" Content="" Foreground="#F666" FontFamily="Segoe UI Semibold"/>
                     </Viewbox>
-                    <Viewbox Margin="10,52,0,0" VerticalAlignment="Top" Width="109" Height="35" HorizontalAlignment="Left" >
+                    <Viewbox Margin="10,56,0,0" VerticalAlignment="Top" Width="109" Height="35" HorizontalAlignment="Left" >
                         <Label local:LightProperty.LightSource="" x:Name="SliderName3" Content="" Foreground="#F666" FontFamily="Segoe UI Semibold"/>
                     </Viewbox>
-                    <Viewbox Margin="10,84,0,0" VerticalAlignment="Top" Width="109" Height="35" HorizontalAlignment="Left" >
+                    <Viewbox Margin="10,88,0,0" VerticalAlignment="Top" Width="109" Height="35" HorizontalAlignment="Left" >
                         <Label local:LightProperty.LightSource="" x:Name="SliderName4" Content="" Foreground="#F666" FontFamily="Segoe UI Semibold"/>
                     </Viewbox>
-                    <Viewbox Margin="10,116,0,0" VerticalAlignment="Top" Width="109" Height="35" HorizontalAlignment="Left" >
+                    <Viewbox Margin="10,120,0,0" VerticalAlignment="Top" Width="109" Height="35" HorizontalAlignment="Left" >
                         <Label local:LightProperty.LightSource="" x:Name="SliderName5" Content="" Foreground="#F666" FontFamily="Segoe UI Semibold"/>
                     </Viewbox>
 
