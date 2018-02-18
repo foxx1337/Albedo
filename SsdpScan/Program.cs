@@ -126,8 +126,10 @@ namespace SsdpScan
 
                 return (unicast: unicastSocket, multicast: multicastSocket);
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                Console.WriteLine($"Failed binding sockets on {address} - {e}.");
+                Console.WriteLine("This is normal and the interface will simply be ignored for SSDP discovery.");
                 return (null, null);
             }
         }
