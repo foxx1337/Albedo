@@ -5,9 +5,9 @@
         Title="Albedo" Height="400" Width="700" WindowStartupLocation="CenterScreen" Icon="Resources/albedo_icon.ico" ResizeMode="CanMinimize" Closing="Window_Closing">
     <Grid Margin="4,0,4,0">
         <TabControl Name="SetupTabs"  HorizontalAlignment="Left" Height="361" VerticalAlignment="Top" Width="676" SelectedIndex="0" SelectionChanged="SetupTabs_SelectionChanged">
-            <TabItem Header="" IsEnabled="False"/>
-            <TabItem Header="" IsEnabled="False">
-                <Grid Margin="0,-70,0,0">
+            <TabItem Header="" IsEnabled="False" Height="20"/>
+            <TabItem Header="" IsEnabled="False" Height="0">
+                <Grid Margin="0,-20,0,0">
                     <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="initial setup" VerticalAlignment="Top" Height="77" Width="544" FontSize="48" FontFamily="Segoe UI Light"/>
                     <Button Content="Next" HorizontalAlignment="Left" Margin="460,297,0,0" VerticalAlignment="Top" Width="200" Height="50" FontSize="22" FontFamily="Segoe UI Semilight" Click="Next_Click"/>
                     <TextBlock HorizontalAlignment="Left" Margin="10,87,0,0" TextWrapping="Wrap" Text=
@@ -15,8 +15,8 @@
                         VerticalAlignment="Top" Height="205" Width="650" FontSize="16" FontFamily="Segoe UI Semilight" />
                 </Grid>
             </TabItem>
-            <TabItem Header="" IsEnabled="False">
-                <Grid Margin="0,-70,0,0">
+            <TabItem Header="" IsEnabled="False" Height="20">
+                <Grid Margin="0,-20,0,0">
                     <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="searching for bridges ..." VerticalAlignment="Top" Height="77" Width="544" FontSize="48" FontFamily="Segoe UI Light"/>
                     <ComboBox Name="BridgeCombo" HorizontalAlignment="Left" Margin="10,87,0,0" VerticalAlignment="Top" Width="650" Height="52" SelectionChanged="BridgeCombo_SelectionChanged" FontSize="14"/>
                     <Button Content="Previous" HorizontalAlignment="Left" Margin="255,297,0,0" VerticalAlignment="Top" Width="200" Height="50" FontSize="22" FontFamily="Segoe UI Semilight" Click="Previous_Click"/>
@@ -27,8 +27,8 @@
                     <TextBox Name="ManualIP" HorizontalAlignment="Left" Height="23" Margin="10,269,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="ManualIP_TextChanged_1"/>
                 </Grid>
             </TabItem>
-            <TabItem Header="" IsEnabled="False">
-                <Grid Margin="0,-70,0,0">
+            <TabItem Header="" IsEnabled="False" Height="20">
+                <Grid Margin="0,-20,0,0">
                     <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="ready to pair" VerticalAlignment="Top" Height="77" Width="544" FontSize="48" FontFamily="Segoe UI Light"/>
                     <Button Content="Previous" HorizontalAlignment="Left" Margin="255,297,0,0" VerticalAlignment="Top" Width="200" Height="50" FontSize="22" FontFamily="Segoe UI Semilight" Click="Previous_Click"/>
                     <Button Content="Next" HorizontalAlignment="Left" Margin="460,297,0,0" VerticalAlignment="Top" Width="200" Height="50" FontSize="22" FontFamily="Segoe UI Semilight" IsEnabled="False"/>
@@ -38,8 +38,8 @@
                     <Image HorizontalAlignment="Center" Height="140" Margin="0,130,0,0" VerticalAlignment="Top" Source="Resources/pair_flat.png" Opacity="0.6" />
                 </Grid>
             </TabItem>
-            <TabItem Header="" IsEnabled="False">
-                <Grid Margin="0,-70,0,0">
+            <TabItem Header="" IsEnabled="False" Height="20">
+                <Grid Margin="0,-20,0,0">
                     <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="finished" VerticalAlignment="Top" Height="77" Width="544" FontSize="48" FontFamily="Segoe UI Light"/>
                     <Button Content="Next" HorizontalAlignment="Left" Margin="460,297,0,0" VerticalAlignment="Top" Width="200" Height="50" FontSize="22" FontFamily="Segoe UI Semilight" Click="Next_Click" />
                     <TextBlock HorizontalAlignment="Left" Margin="10,87,0,0" TextWrapping="Wrap"
@@ -47,16 +47,16 @@
                                "Albedo is now ready for use.&#xA;&#xA;If you're new to Albedo, press Next for a short tutorial. Otherwise, close this window to complete the setup."/>
                 </Grid>
             </TabItem>
-            <TabItem Header="" IsEnabled="False">
-                <Grid Margin="0,-70,0,0">
+            <TabItem Header="" IsEnabled="False" Height="20">
+                <Grid Margin="0,-20,0,0">
                     <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="step 1" VerticalAlignment="Top" Height="77" Width="544" FontSize="48" FontFamily="Segoe UI Light"/>
                     <TextBlock HorizontalAlignment="Left" Margin="10,87,0,0" TextWrapping="Wrap"
                         VerticalAlignment="Top" Height="205" Width="650" FontSize="16" FontFamily="Segoe UI Semilight" Text=
                                "Left-click on Albedo in the notification area to display the controls."/>
                 </Grid>
             </TabItem>
-            <TabItem Header="" IsEnabled="False">
-                <Grid Margin="0,-70,0,0">
+            <TabItem Header="" IsEnabled="False" Height="20">
+                <Grid Margin="0,-20,0,0">
                     <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="step 2" VerticalAlignment="Top" Height="77" Width="544" FontSize="48" FontFamily="Segoe UI Light"/>
                     <TextBlock HorizontalAlignment="Left" Margin="10,87,0,0" TextWrapping="Wrap"
                         VerticalAlignment="Top" Height="205" Width="650" FontSize="16" FontFamily="Segoe UI Semilight">
@@ -73,8 +73,8 @@
                     </TextBlock>				
                 </Grid>
             </TabItem>
-            <TabItem Header="" IsEnabled="False">
-                <Grid Margin="0,-70,0,0">
+            <TabItem Header="" IsEnabled="False" Height="20">
+                <Grid Margin="0,-20,0,0">
                     <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="step 3" VerticalAlignment="Top" Height="77" Width="544" FontSize="48" FontFamily="Segoe UI Light"/>
                     <TextBlock HorizontalAlignment="Left" Margin="10,87,0,0" TextWrapping="Wrap"
                         VerticalAlignment="Top" Height="205" Width="650" FontSize="16" FontFamily="Segoe UI Semilight">
@@ -89,16 +89,16 @@
                     </TextBlock>
                 </Grid>
             </TabItem>
-            <TabItem Header="" IsEnabled="False">
-                <Grid Margin="0,-70,0,0">
+            <TabItem Header="" IsEnabled="False" Height="20">
+                <Grid Margin="0,-20,0,0">
                     <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="step 4" VerticalAlignment="Top" Height="77" Width="544" FontSize="48" FontFamily="Segoe UI Light"/>
                     <TextBlock HorizontalAlignment="Left" Margin="10,87,0,0" TextWrapping="Wrap"
                         VerticalAlignment="Top" Height="205" Width="650" FontSize="16" FontFamily="Segoe UI Semilight" Text=
                                "Scenes are the easiest way to interact with your hue lights. They are presets that change the colour, saturation and brightness of your lights with a single click. You can create your own scenes with the scene editor under Settings -> Advanced settings. &#xA;&#xA;Click on any of the coloured tiles to continue to the final step."/>
                 </Grid>
             </TabItem>
-            <TabItem Header="" IsEnabled="False">
-                <Grid Margin="0,-70,0,0">
+            <TabItem Header="" IsEnabled="False" Height="20">
+                <Grid Margin="0,-20,0,0">
                     <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="step 5" VerticalAlignment="Top" Height="77" Width="544" FontSize="48" FontFamily="Segoe UI Light"/>
                     <Button Content="Close" HorizontalAlignment="Left" Margin="460,297,0,0" VerticalAlignment="Top" Width="200" Height="50" FontSize="22" FontFamily="Segoe UI Semilight" Click="Close_Click" />
                     <TextBlock HorizontalAlignment="Left" Margin="10,87,0,0" TextWrapping="Wrap"

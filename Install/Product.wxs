@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Product Id="*"
+           Name="Albedo"
+           Language="1033"
+           Version="1.2.0.0"
+           Manufacturer="open source"
+           UpgradeCode="4b609ee5-d889-413d-b606-e1bfede01013">
+    <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+
+    <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+    <MediaTemplate />
+
+    <Feature Id="ProductFeature" Title="Install" Level="1">
+      <ComponentGroupRef Id="ProductComponents" />
+    </Feature>
+  </Product>
+
+  <Fragment>
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFilesFolder">
+        <Directory Id="INSTALLFOLDER" Name="Albedo" />
+      </Directory>
+    </Directory>
+  </Fragment>
+
+  <Fragment>
+    <ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+      <!-- TODO: Remove the comments around this Component element and the ComponentRef below in order to add resources to this installer. -->
+      <Component Id="ProductComponent" Guid="F4617C8E-1AAE-4C26-97A6-2D1E17DF4464">
+        <!-- TODO: Insert files, registry keys, and other resources here. -->
+        <File Id="MainProgram" Source="$(var.Albedo.TargetPath)" />
+
+        <File Id="Changelog" Source="$(var.Albedo.TargetDir)CHANGELOG.txt" />
+        <File Id="License" Source="$(var.Albedo.TargetDir)GPL.txt" />
+        <File Id="Licenses" Source="$(var.Albedo.TargetDir)LICENSES.txt" />
+
+        <File Id="TaskbarComponent" Source="$(var.Albedo.TargetDir)Hardcodet.Wpf.TaskbarNotification.dll" />
+        <File Id="MetroComponent" Source="$(var.Albedo.TargetDir)MahApps.Metro.dll" />
+        <File Id="SharpDXComponent" Source="$(var.Albedo.TargetDir)SharpDX.dll" />
+        <File Id="SharpDXCompilerComponent" Source="$(var.Albedo.TargetDir)SharpDX.D3DCompiler.dll" />
+        <File Id="SharpDXD2DComponent" Source="$(var.Albedo.TargetDir)SharpDX.Direct2D1.dll" />
+        <File Id="SharpDXD3D11Component" Source="$(var.Albedo.TargetDir)SharpDX.Direct3D11.dll" />
+        <File Id="SharpDXDXGIComponent" Source="$(var.Albedo.TargetDir)SharpDX.DXGI.dll" />
+        <File Id="InteractivityComponent" Source="$(var.Albedo.TargetDir)System.Windows.Interactivity.dll" />
+      </Component>
+    </ComponentGroup>
+  </Fragment>
+</Wix>
